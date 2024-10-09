@@ -10,7 +10,7 @@ class Imagekit
     public function uploadFile(Request $Request)
     {
         $imageUrl = $request->input('imageUrl');
-        $folderPath = $request->input('folderPath') ? $request->input('folderPath') : config('defaultFolderPath');
+        $folderPath = $request->input('folderPath') ? $request->input('folderPath') : config('imagekit')['defaultFolderPath'];
         $authKey = base64_encode(config('imagekit')['apiKey'].':'.$imageUrl);
 
         $formData = [
