@@ -7,10 +7,10 @@ use Illuminate\Http\Request;
 
 class Imagekit
 {
-    public function uploadFile(Request $request)
+    public function uploadFile(Request $Request)
     {
-        $imageUrl = $request->input('imageUrl');
-        $folderPath = $request->input('folderPath') ? $request->input('folderPath') : config('imagekit')['apiKey'];
+        $imageUrl = $Request->input('imageUrl');
+        $folderPath = $Request->input('folderPath') ? $Request->input('folderPath') : config('imagekit')['apiKey'];
         $authKey = base64_encode(config('imagekit')['apiKey'].':'.$imageUrl);
 
         $formData = [
@@ -20,7 +20,7 @@ class Imagekit
             ],
             [
                 'name' => 'fileName',
-                'contents' => $request->input('fileName').'.png',
+                'contents' => $Request->input('fileName').'.png',
             ],
             [
                 'name' => 'folder',
