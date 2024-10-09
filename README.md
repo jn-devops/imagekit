@@ -40,6 +40,8 @@ This is the contents of the published config file:
 
 ```php
 return [
+    "apiKey" => env("IMAGEKIT_APIKEY"),
+    "defaultFolderPath" => env("IMAGEKIT_DEFAULT_PATH","/images")
 ];
 ```
 
@@ -52,8 +54,14 @@ php artisan vendor:publish --tag="imagekit-views"
 ## Usage
 
 ```php
-$imagekit = new Homeful\Imagekit();
-echo $imagekit->echoPhrase('Hello, Homeful!');
+$paymate = new Homeful\Imagekit();
+
+$jsonInput = [{
+    "imageUrl" => "", //alpha-numberic
+    "fileName" => "",//alpha-numberic
+    "folder" => "" //alpha-numberic
+}]
+$response = $paymate->payment_cashier($jsonInput); //return URL
 ```
 
 ## Testing
