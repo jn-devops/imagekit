@@ -8,11 +8,10 @@ use Illuminate\Http\Request;
 class Imagekit
 {
     public function uploadFile(Request $Request)
-    {
-        dd($request);
-        $imageUrl = $request->input('imageUrl'); // Make sure 'selfieUrl' is passed in the request
+    {     
+        $imageUrl = $request->input('imageUrl');
         $folderPath = $request->input('folderPath') ? $request->input('folderPath') : config('defaultFolderPath');
-        $authKey = base64_encode(config('apiKey').':'.$imageUrl);
+        $authKey = base64_encode(config('imagekit')['apiKey'].':'.$imageUrl);
 
         $formData = [
             [
