@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace Homeful\Imagekit\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class ImagekitCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'imagekit';
 
     public $description = 'My command';
 
