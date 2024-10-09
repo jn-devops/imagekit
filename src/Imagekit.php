@@ -37,6 +37,7 @@ class Imagekit
                 ],
                 'multipart' => $formData,
             ]);
+
             return $response->getBody();
         } catch (\Exception $e) {
             return response()->json([
