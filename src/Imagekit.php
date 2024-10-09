@@ -37,13 +37,7 @@ class Imagekit
                 ],
                 'multipart' => $formData,
             ]);
-
-            $responseData = json_decode($response->getBody(), true);
-
-            return response()->json([
-                'url' => $responseData['url'],
-            ]);
-
+            return $response->getBody();
         } catch (\Exception $e) {
             return response()->json([
                 'error' => 'Error uploading file: '.$e->getMessage(),
