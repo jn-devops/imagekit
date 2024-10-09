@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class Imagekit
 {
-    public function uploadFile(Request $Request)
+    public function uploadFile(Request $request)
     {
         $imageUrl = $request->input('imageUrl');
         $folderPath = $request->input('folderPath') ? $request->input('folderPath') : config('imagekit')['defaultFolderPath'];
