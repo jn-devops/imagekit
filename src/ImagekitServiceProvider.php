@@ -2,9 +2,9 @@
 
 namespace Homeful\Imagekit;
 
+use Homeful\Imagekit\Commands\ImagekitCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Homeful\Imagekit\Commands\ImagekitCommand;
 
 class ImagekitServiceProvider extends PackageServiceProvider
 {

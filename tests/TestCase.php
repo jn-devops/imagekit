@@ -2,9 +2,9 @@
 
 namespace Homeful\Imagekit\Tests;
 
+use Homeful\Imagekit\ImagekitServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Homeful\Imagekit\ImagekitServiceProvider;
 
 class TestCase extends Orchestra
 {
