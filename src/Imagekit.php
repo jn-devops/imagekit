@@ -44,11 +44,12 @@ class Imagekit
             ], 500);
         }
     }
+
     public function uploadFilev2(array $jsonInput)
     {
         $imageUrl = $jsonInput['imageUrl'];
         $folderPath = isset($jsonInput['folderPath']) ? $jsonInput['folderPath'] : config('imagekit')['apiKey'];
-        $authKey = base64_encode(config('imagekit')['apiKey'] . ':' . $imageUrl);
+        $authKey = base64_encode(config('imagekit')['apiKey'].':'.$imageUrl);
 
         $formData = [
             [
