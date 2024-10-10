@@ -37,7 +37,7 @@ class Imagekit
                 'multipart' => $formData,
             ]);
 
-            return $response->getBody();
+            return $response->getBody()->getContents();
         } catch (\Exception $e) {
             return response()->json([
                 'error' => 'Error uploading file: '.$e->getMessage(),
@@ -74,7 +74,7 @@ class Imagekit
                 'multipart' => $formData,
             ]);
 
-            return $response->getBody();
+            return $response->getBody()->getContents();
         } catch (\Exception $e) {
             return response()->json([
                 'error' => 'Error uploading file: '.$e->getMessage(),
